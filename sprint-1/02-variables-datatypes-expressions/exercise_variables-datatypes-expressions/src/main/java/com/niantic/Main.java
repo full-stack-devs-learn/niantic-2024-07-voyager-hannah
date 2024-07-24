@@ -240,9 +240,12 @@ public class Main
         // he missed 4 shots.
 
         // What percentage of his shots did he make?
-        double pete11  = 11;
-        double miss = 4;
-        double percen = (double) miss/pete11 * 100;
+        int pete11  = 11;
+        int miss = 4;
+        int totalshots = pete11 + miss;
+        double percen = (pete11 * 1.0)/ totalshots;
+        percen*= 100;
+        percen = Math.round(percen);
         System.out.println("Percentage of Shots :" + percen);
 
 
