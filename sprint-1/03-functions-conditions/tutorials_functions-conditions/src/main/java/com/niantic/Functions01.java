@@ -61,8 +61,23 @@ public class Functions01
         System.out.println(" --- --- --- --- -----");
         System.out.printf(" %-2d  %-2d  %-2d  %-2d  %d \n",q1, q2,q3,q4,finalScore);
         System.out.println();
+
         /* end repeatable code */
 
         /* Add your code here */
+        teamName = "Clemson";
+        rank = 11;
+        q1 = 13;
+        q2 = 20;
+        q3 = 7;
+        q4 = 26;
+        finalScore = q1 + q2 + q3 + q4;
+
+        System.out.printf("(%d) %s \n", rank, teamName);
+        System.out.println("-------------------------------");
+        System.out.println(" Q1  Q2  Q3  Q4  Final");
+        System.out.println(" --- --- --- --- -----");
+        System.out.printf(" %-2d  %-2d  %-2d  %-2d  %d \n",q1, q2,q3,q4,finalScore);
+        System.out.println();
     }
 }

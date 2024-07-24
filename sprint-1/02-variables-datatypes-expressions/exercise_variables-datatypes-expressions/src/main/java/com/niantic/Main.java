@@ -259,10 +259,11 @@ public class Main
         // How many shots do Pete and Pat have to take to win
         // this game?
         double petepatpercent = 0.70;
-        int score = 31;
-        int neededTowin = score + 1;
-        int shots1 = (int) ((int)neededTowin/ 3 / (double)petepatpercent);
-        System.out.println("Shots to win :" + shots);
+        int pointspershot = 3;
+        int otherTeamscore = 31;
+        int neededTowin = otherTeamscore + 1;
+        double neededshots1 = 3/31 + 1;
+        System.out.println("Shots to win :" + neededshots1);
     }
     
     public static void clairesCookies()
