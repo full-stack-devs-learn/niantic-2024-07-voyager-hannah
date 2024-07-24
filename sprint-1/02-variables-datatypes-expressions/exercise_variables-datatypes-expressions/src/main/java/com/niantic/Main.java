@@ -2,6 +2,8 @@ package com.niantic;
 
 public class Main
 {
+    private static String Hannah;
+
     public static void main(String[] args)
     {
         examples();
@@ -51,27 +53,38 @@ public class Main
         // Variable name: name
         // Data Type: string (names/words are strings)
 
+        String myName = "Hannah";
+        String Last = "Patzold";
+        System.out.println("First Name : " + myName);
+        System.out.println("LastName   : "  + Last);
+
+
 
 
         // 2. Declare a variable to hold your age.
         // Variable name: age
         // Data Type: int (age is a whole number)
+        int Myage;
+        Myage = 22;
+        System.out.println("Age : " + Myage);
+
 
 
 
         // 3. Declare a variable that holds the first 5 digits of PI.
         // Variable name: pi
         // Data Type: double (pi is a number with decimal places)
-
+        double Pi = 3.1415 ;
+       System.out.println("Pi Digits : " + Pi);
 
 
         // 4. Declare a variable holds the price of
         // an adult meal at the buffet.
         // Variable name: price
         // Data Type: double (price contains a dollar and cent value)
+        double Price = 14.77;
+        System.out.println("Buffet Price :" + Price);
 
-        // NOTE: the decimal data type  is not automatically recognized
-        // see lecture notes
     }
 
     public static void section02()
@@ -97,47 +110,64 @@ public class Main
 
         // Hint: You cannot use the same variable name
         // as a variable that you have used before.
-
+        String Favhero = "Spiderman";
+        System.out.println("Favorite Super Hero :" + Favhero);
 
 
         // 6. Declare a variable to hold the value of
         // value of a test score. The test has 100
         // questions and each question is worth 1 point.
         // (You can choose the score)
+        int testscore;
+        testscore = 88;
+        System.out.println("Test Score :" + testscore );
 
 
 
         // 7. Declare a variable that holds the current
         // population in the United States.
         // (search what the population is today)
-
+        int population = 341923836;
+        System.out.println("United States Population : " + population);
 
 
         // 8. Declare a variable that holds the current
         // population in China.
         // (search what the population is today)
+        int chPopulation = 1425178782;
+        System.out.println("Population on China : " + chPopulation );
 
 
 
         // 9. Declare a variable that holds the current
         // population in the world.
         // (search what the population is today)
-
+        long world = 8019876189L;
+        System.out.println("Global Population : " + world);
 
 
         // 10. Declare a variable that specifies whether
         // or not your mouse is wireless.
+        String Wirelessmouse = String.valueOf("False");
+        char False = 0;
+        System.out.println("Wireless mouse : " + False );
+
 
 
 
         // 11. Search what the Latitude and Longitude of your
         // home town are. Then declare 2 variables
         // to store the Latitude and Longitude.
-
+        double latitude = 47.185379;
+        double longitude = -122.292900;
+        System.out.println("Hometown Coordinants Latitude : " + latitude);
+        System.out.println("Longitude : " + longitude);
 
 
         // 12. Create a variable that holds the current
         // Microsoft stock price.
+        double stock = 444.85;
+        System.out.println("Microsoft Stock price : " + stock);
     }
     
     public static void section03()
@@ -174,35 +204,46 @@ public class Main
         // but missed 3 of his shots.
 
         // How many shots did Pete take?
-
+        int shots = 7;
+        System.out.println("Shots taken :" + shots);
 
 
         // 14. In his previous basketball game Pete took 20 shots.
         // He missed 6 shots, and he made 3 three point shots.
 
         // How many 2 point shots did Pete make?\
-
+        int shotstwo = 11;
+        System.out.println("2 point shots :" + shotstwo );
 
 
         // 15. Pete and Pat are teammates. Pete made 6 shots.
         // Pat made twice as many shots as Pete.
 
         // How many total shots did they make?
-
+        int pete = 6;
+        int pat = 12;
+        int shotsthree = pete + pat;
+        System.out.println("Total shots:" + shotsthree);
 
 
         // 16. Pete has made 13 shots, Pat has made 9.
         // If both Pete and Pat make 1 more shot each
         // before the game ends, how many total shots
         // did the Terrifying Twosome make in the game?
-
+        int pete13 = 13 + 1;
+        int pat9 = 9 + 1;
+        int combinedshots = pete13 + pat9;
+        System.out.println("Terryifying Twosome Total Shots :" + combinedshots);
 
 
         // 17. In his last game Pete made 11 shots.
         // he missed 4 shots.
 
         // What percentage of his shots did he make?
-
+        double pete11  = 11;
+        double miss = 4;
+        double percen = (double) miss/pete11 * 100;
+        System.out.println("Percentage of Shots :" + percen);
 
 
 
@@ -214,6 +255,11 @@ public class Main
 
         // How many shots do Pete and Pat have to take to win
         // this game?
+        double petepatpercent = 0.70;
+        int score = 31;
+        int neededTowin = score + 1;
+        int shots1 = (int) ((int)neededTowin/ 3 / (double)petepatpercent);
+        System.out.println("Shots to win :" + shots);
     }
     
     public static void clairesCookies()
