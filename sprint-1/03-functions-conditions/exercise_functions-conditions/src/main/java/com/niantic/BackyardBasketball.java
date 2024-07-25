@@ -1,7 +1,6 @@
-package com.niantic;
+ package com.niantic;
 
-public class BackyardBasketball
-{
+public class BackyardBasketball {
     /*
      * Teams that play in the backyard league want to be able
      * to calculate their winning percentage.
@@ -22,9 +21,11 @@ public class BackyardBasketball
      * calculateWinningPercentage(5, 10) -> 33
      *
      */
-    public int calculateWinningPercentage(int gamesWon, int gamesLost)
-    {
-        return 0;
+    public int calculateWinningPercentage(int gamesWon, int gamesLost) {
+        int totalgames = gamesWon + gamesLost;
+        int winningPercentage = gamesWon * 100 / totalgames;
+        return winningPercentage;
+
     }
 
 
@@ -43,21 +44,29 @@ public class BackyardBasketball
      */
     public int calculatePointsScored(int shotPercentage, int shotsTaken, boolean isThree)
     {
-        return 0;
+        double shotPercen= shotPercentage/100.0;
+        double shotssMade = shotPercen * shotsTaken;
+        if (isThree == true) {
+
+            return(int) shotssMade* 3;
+        }
+        else {
+            return(int) shotssMade * 2;
+        }
+
     }
 
-
     /*
-     * Calculate the minimum number of shots that are required
-     * to score the desired number of points.
+     The calculatePointsScored function should calculate
+     * the number of points a player scored in a game.
      *
-     * shotPercentage = the estimated % of shots that will go in (whole number)
-     * desiredScore = the number of points you want to score
-     * isThree = if true, the player will shoot a 3 pointer otherwise a 2
+     * shotPercentage = the percent of shots made
+     * shotsTaken = the number of shots the player took
+     * isThree = if true, the player shot a 3 pointer otherwise a 2
      *
-     * Example:
-     * If a player has a 50% scoring average, and he wants to score 10 points,
-     * how many shots will he have to take (if he is NOT shooting 3 pointers)
+     * calculatePointsScored(70, 10, false) -> 14
+     * calculatePointsScored(70, 10, true) -> 21
+     * calculatePointsScored(67, 15, false) -> 20
      *
      * calculateShotsRequired(50, 10, false) -> 10
      *
@@ -67,8 +76,29 @@ public class BackyardBasketball
      * calculateShotsRequired(67, 24, false) -> 18     *
      *
      */
+
     public int calculateShotsRequired(int shotPercentage, int desiredScore, boolean isThree)
     {
-        return 0;
+        int madeBaskets;
+        int actualScore;
+        int requiredShots;
+
+        if (isThree == true) {
+            madeBaskets = desiredScore / 3;
+            actualScore = desiredScore * 3;
+        } else {
+            madeBaskets = desiredScore / 2;
+            actualScore = desiredScore * 2;
+        }
+
+        if (actualScore < desiredScore) {
+            madeBaskets++;
+        }
+        requiredShots = (madeBaskets * 100) / shotPercentage;
+        return requiredShots;
     }
 }
+
+
+
+

@@ -3,8 +3,8 @@ package com.niantic;
 public class ClairesCookies
 {
     @SuppressWarnings("unused") 
-    private final double TaxRate = .0575;
-
+    private final double TAX_RATE = .0575;
+    private final double PRICE_PER_DOZEN = 12.95;
     /*
      * Claire's cookies cost $12.95 a dozen.
      *
@@ -43,7 +43,7 @@ public class ClairesCookies
      */
     public double calculateTotal(int quantity)
     {
-        return 0;
+        return quantity * PRICE_PER_DOZEN;
     }
 
     /*
