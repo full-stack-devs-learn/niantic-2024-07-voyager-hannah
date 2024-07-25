@@ -85,9 +85,9 @@ public class BackyardBasketball {
 
         if (isThree == true) {
             madeBaskets = desiredScore / 3;
-            actualScore = desiredScore * 3;
+            actualScore = desiredScore * 2;
         } else {
-            madeBaskets = desiredScore / 2;
+            madeBaskets = desiredScore / 3;
             actualScore = desiredScore * 2;
         }
 
