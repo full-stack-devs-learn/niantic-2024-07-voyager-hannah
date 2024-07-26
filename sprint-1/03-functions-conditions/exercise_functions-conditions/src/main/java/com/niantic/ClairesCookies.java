@@ -1,10 +1,10 @@
 package com.niantic;
 
-public class ClairesCookies
-{
-    @SuppressWarnings("unused") 
-    private final double TAX_RATE = .0575;
-    private final double PRICE_PER_DOZEN = 12.95;
+public class ClairesCookies {
+    double PRICE_PER_DOZEN = 12.95;
+    double TAX_RATE = 0.575;
+
+    @SuppressWarnings("unused")
     /*
      * Claire's cookies cost $12.95 a dozen.
      *
@@ -19,9 +19,11 @@ public class ClairesCookies
      * calculateSubtotal(2) -> 25.90
      * calculateSubtotal(5) -> 64.75
      */
-    public double calculateSubtotal(int quantity)
-    {
-        return 0;
+
+    public double calculateSubtotal(int quantity) {
+        double calculateSubtotal = PRICE_PER_DOZEN * quantity;
+        return calculateSubtotal;
+
     }
 
     /*
@@ -41,9 +43,15 @@ public class ClairesCookies
      * calculateTotal(2) -> 27.39
      * calculateTotal(5) -> 68.47
      */
-    public double calculateTotal(int quantity)
-    {
-        return quantity * PRICE_PER_DOZEN;
+    public double calculateTotal(int quantity) {
+
+        double calculateSubtotal = PRICE_PER_DOZEN * quantity;
+
+        double taxAmount = calculateSubtotal * TAX_RATE;
+        double calculateTotal = calculateSubtotal + taxAmount;;
+        return calculateTotal;
+
+
     }
 
     /*
@@ -73,8 +81,7 @@ public class ClairesCookies
      * calculateQuickOrder(3,1,0) -> 55.84
      * calculateQuickOrder(2,0,2) -> 61.12
      */
-    public double calculateQuickOrder(int snickerDozen, int chocolateDozen, int frostedDozen)
-    {
+    public double calculateQuickOrder(int snickerDozen, int chocolateDozen, int frostedDozen) {
         return 0;
     }
 
@@ -101,9 +108,10 @@ public class ClairesCookies
      * calculateCustomOrder (3, false, true) -> 47.43
      * calculateCustomOrder (5, true, false) -> 73.76
      */
-    public double calculateCustomOrder (int quantity, boolean hasChocolateChips, boolean hasFrosting)
-    {
+    public double calculateCustomOrder(int quantity, boolean hasChocolateChips, boolean hasFrosting) {
         return 0;
     }
-
 }
+
+
+

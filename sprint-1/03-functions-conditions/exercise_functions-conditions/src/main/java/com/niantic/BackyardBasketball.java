@@ -79,23 +79,19 @@ public class BackyardBasketball {
 
     public int calculateShotsRequired(int shotPercentage, int desiredScore, boolean isThree)
     {
-        int madeBaskets;
-        int actualScore;
-        int requiredShots;
-
-        if (isThree == true) {
-            madeBaskets = desiredScore / 3;
-            actualScore = desiredScore * 2;
+        double madeBaskets;
+        double requiredShots;
+        if (isThree) {
+            madeBaskets = desiredScore / 3.0;
         } else {
-            madeBaskets = desiredScore / 2;
-            actualScore = desiredScore * 3;
+            madeBaskets = desiredScore / 2.0;
         }
 
-        if (actualScore < desiredScore) {
-            madeBaskets++;
-        }
-        requiredShots = (madeBaskets * 100) / shotPercentage;
-        return requiredShots;
+        madeBaskets = Math.ceil(madeBaskets);
+
+        requiredShots = (madeBaskets * 100.0) / shotPercentage;
+
+        return (int) Math.ceil(requiredShots);
     }
 }
 
