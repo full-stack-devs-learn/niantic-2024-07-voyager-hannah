@@ -87,8 +87,8 @@ public class BackyardBasketball {
             madeBaskets = desiredScore / 3;
             actualScore = desiredScore * 2;
         } else {
-            madeBaskets = desiredScore / 3;
-            actualScore = desiredScore * 2;
+            madeBaskets = desiredScore / 2;
+            actualScore = desiredScore * 3;
         }
 
         if (actualScore < desiredScore) {
