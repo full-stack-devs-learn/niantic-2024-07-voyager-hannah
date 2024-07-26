@@ -2,7 +2,7 @@ package com.niantic;
 
 public class ClairesCookies {
     double PRICE_PER_DOZEN = 12.95;
-    double TAX_RATE = 0.575;
+    double TAX_RATE = 0.0575;
 
     @SuppressWarnings("unused")
     /*
@@ -81,8 +81,14 @@ public class ClairesCookies {
      * calculateQuickOrder(3,1,0) -> 55.84
      * calculateQuickOrder(2,0,2) -> 61.12
      */
-    public double calculateQuickOrder(int snickerDozen, int chocolateDozen, int frostedDozen) {
-        return 0;
+    public double calculateQuickOrder(int snickerDozen, int chocolateDozen, int frostedDozen)
+    {
+        double snickerDoodles= 12.95 * snickerDozen;
+        double chocolateChip = 13.95 * chocolateDozen;
+        double frostedChocolatechip = 15.95 * frostedDozen;
+        double  cookiesSum = (snickerDoodles + chocolateChip + frostedChocolatechip);
+        double calculateQuickOrder = cookiesSum * (1 +TAX_RATE);
+        return calculateQuickOrder;
     }
 
 
@@ -108,8 +114,24 @@ public class ClairesCookies {
      * calculateCustomOrder (3, false, true) -> 47.43
      * calculateCustomOrder (5, true, false) -> 73.76
      */
-    public double calculateCustomOrder(int quantity, boolean hasChocolateChips, boolean hasFrosting) {
-        return 0;
+    public double calculateCustomOrder(int quantity, boolean hasChocolateChips, boolean hasFrosting)
+    {
+       double chocolateChipCost = 1.00;
+       double frostingCost = 2.00;
+
+       double baseCost = PRICE_PER_DOZEN * quantity * (1 + TAX_RATE);
+       double additionalCost = 0.0;
+
+       if (hasChocolateChips) {
+           additionalCost += chocolateChipCost * quantity * (1 + TAX_RATE);
+       }
+        if (hasFrosting)
+        {
+    additionalCost += frostingCost * quantity * (1 + TAX_RATE);
+    }
+       double calculateCustomOrder = additionalCost + baseCost;
+
+       return calculateCustomOrder;
     }
 }
 
