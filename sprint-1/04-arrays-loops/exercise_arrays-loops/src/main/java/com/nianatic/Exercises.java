@@ -126,8 +126,9 @@ public String lastDayOfWeek(String[] daysOfTheWeek)
  * monthName([Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec], 2)  => Feb
  * monthName([Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec], 8)  => Aug
  */
-public String monthName(String[] months, int monthNumber) {
-    return null;
+public String monthName(String[] months, int monthNumber)
+{
+  return null;
 }
 
 /*
@@ -180,8 +181,11 @@ public int countName(String[] names, String nameToFind) {
  * sumNumbers([1,3,5])      =>  9
  * sumNumbers([1,1,2,3])    =>  7
  */
-public int sumNumbers(int[] numbers) {
-    return -1;
+public int sumNumbers(int[] numbers)
+{
+
+
+   return 0;
 }
 
 /*
