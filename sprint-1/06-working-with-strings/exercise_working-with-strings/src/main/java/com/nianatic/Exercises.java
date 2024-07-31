@@ -1,7 +1,6 @@
 package com.nianatic;
 
-public class Exercises
-{
+public class Exercises {
     /*
      * In this function you need to convert a word
      * either to all upper case letters or all
@@ -16,10 +15,13 @@ public class Exercises
      * changeCase("PARTY", true) => PARTY
      *
      */
-    public String changeCase(String word, boolean toUpperCase)
-    {
+    public String changeCase(String word, boolean toUpperCase) {
+        if (toUpperCase) {
+            return word.toUpperCase();
+        } else {
+            return word.toLowerCase();
+        }
 
-        return null;
     }
 
 
@@ -49,9 +51,11 @@ public class Exercises
      * createHtml("Bold text", "strong") => <strong>Bold text</strong>
      *
      */
-    public String createHtml(String content, String elementName)
-    {
-        return null;
+    public String createHtml(String content, String elementName) {
+        return "<" + elementName + ">" + content + "</" + elementName + ">";
+
+
+
     }
 
     /*
@@ -71,9 +75,13 @@ public class Exercises
      * moreHtml("", "p") => <p />
      *
      */
-    public String moreHtml(String content, String elementName)
-    {
-        return null;
+    public String moreHtml(String content, String elementName) {
+        if (content.isEmpty()) {
+            return "<" + elementName + " />";
+        } else {
+            return "<" + elementName + ">" + content + "</" + elementName + ">";
+
+        }
     }
 
     /*
@@ -94,9 +102,8 @@ public class Exercises
      * createXml(1, "Belinda Carter") => <customer><id>1</id><name>Belinda Carter</name></customer>
      *
      */
-    public String createXml(int id, String name)
-    {
-        return  null;
+    public String createXml(int id, String name) {
+        return "<customer><id>" + id + "</id><name>" + name + "</name></customer>";
     }
 
     /*
@@ -131,9 +138,11 @@ public class Exercises
      *                                      </customer>
      *
      */
-    public String formattedXml(int id, String name)
-    {
-        return null;
+    public String formattedXml(int id, String name) {
+        return "<customer>\n" +
+               "  <id>" + id + "</id>\n" +
+                "  <name>" + name + "</name>\n" +
+                "</customer>";
     }
 
     /*
@@ -155,9 +164,12 @@ public class Exercises
      * formatFullName("Glen", "Carter", "Williamson", "Jr") => Glen Carter Williamson, Jr
      *
      */
-    public String formatFullName(String firstName, String middleName, String lastName, String suffix)
-    {
-        return  null;
+    public String formatFullName(String firstName, String middleName, String lastName, String suffix) {
+        return firstName +
+                (middleName.isEmpty() ? "" : " " + middleName) +
+                " " + lastName +
+                (suffix.isEmpty() ? "" : ", " + suffix);
+
     }
 
     /*
@@ -186,27 +198,7 @@ public class Exercises
      * createUserName("Glen Williamson, III") => glen.williamson
      *
      */
-    public String createUserName(String fullName)
-    {
-       String lowerCaseFullName = fullName.strip().toLowerCase();
-
-        String[] fullNameParts = lowerCaseFullName.split(regex(","));
-        String nameOnly = fullNameParts[0];
-
-        String[] names = nameOnly.split(regex(","));
-        String firstName = names[0];
-        String middleName = "";
-        String lastName = "";
-
-        if(names.length > 2) {
-            middleName = names[1].substring(0, 1);
-            lastName = names[2];
-        }
-        else {
-            lastName = names[1];
-
-        }
-        String userName = firstName + "." + middleName + "." + lastName;
-        return nameOnly;
+    public String createUserName(String fullName) {
+        return null;
     }
 }
