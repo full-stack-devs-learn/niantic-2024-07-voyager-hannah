@@ -6,6 +6,11 @@ USE northwind;
 
 -- Hint: Be sure to create a column alias for 
 -- the new column
-
+SELECT product_name
+	,unit_price
+    ,units_in_stock
+    ,category_name
+FROM products_by_category
+WHERE category_name = 'Dairy Products'
 -- Expected: 10 rows
 

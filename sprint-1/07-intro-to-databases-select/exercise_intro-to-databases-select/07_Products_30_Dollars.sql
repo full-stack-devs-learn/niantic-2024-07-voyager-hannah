@@ -4,4 +4,7 @@ USE northwind;
 -- that cost at least $30
 
 -- Expected: 25 rows
-
+SELECT product_name
+	,unit_price
+FROM products
+WHERE unit_price >= 30

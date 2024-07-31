@@ -18,8 +18,10 @@ public class Exercises
      */
     public String changeCase(String word, boolean toUpperCase)
     {
+
         return null;
     }
+
 
     /*
      * As a full stack developer you will often need to
@@ -186,6 +188,25 @@ public class Exercises
      */
     public String createUserName(String fullName)
     {
-        return null;
+       String lowerCaseFullName = fullName.strip().toLowerCase();
+
+        String[] fullNameParts = lowerCaseFullName.split(regex(","));
+        String nameOnly = fullNameParts[0];
+
+        String[] names = nameOnly.split(regex(","));
+        String firstName = names[0];
+        String middleName = "";
+        String lastName = "";
+
+        if(names.length > 2) {
+            middleName = names[1].substring(0, 1);
+            lastName = names[2];
+        }
+        else {
+            lastName = names[1];
+
+        }
+        String userName = firstName + "." + middleName + "." + lastName;
+        return nameOnly;
     }
 }
