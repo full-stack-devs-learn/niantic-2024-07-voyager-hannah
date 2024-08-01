@@ -5,3 +5,4 @@ USE northwind;
 -- the product name, category, price, units in stock (20), units on order (0)
 -- and re-order level (10) for each product.
 
+SELECT * FROM categories
