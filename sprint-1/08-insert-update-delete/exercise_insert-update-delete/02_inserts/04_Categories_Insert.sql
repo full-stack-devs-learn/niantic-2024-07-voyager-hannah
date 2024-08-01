@@ -4,5 +4,14 @@ USE northwind;
 -- category name: Sporting Goods
 -- description: All products that relate to recreational activities.
 --              This includes equipment needed for team sports as well
---              as outdoor activities such as camping or river rafting.
+--              as outdoor activities such as camping or river rafting.category_namecategory_name
+
+
+INSERT INTO categories (category_name, description)
+VALUES ('Sporting Goods','All products that relate to recreational activities.This includes equipment needed for team sports as well
+             as outdoor activities such as camping or river rafting.category_namecategory_name');
+
+SELECT *
+FROM categories
+
 

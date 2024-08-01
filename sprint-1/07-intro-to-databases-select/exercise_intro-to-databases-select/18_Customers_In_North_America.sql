@@ -12,5 +12,5 @@ ORDER BY Country
 
 
 
--- Expected: 21 sssRows
+-- Expected: 21 Rows
 

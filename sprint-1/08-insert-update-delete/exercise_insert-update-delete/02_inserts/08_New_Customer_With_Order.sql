@@ -45,3 +45,17 @@ OrderDetails: (Create 5 line items)
     Discount: 0
 */
 
+SET @customer_id = MSSB
+	,@company_name = 'Miss Boba'
+    ,@contact_name = 'Bobby Boba'
+    ,@address = '111 Boba Street'
+    ,@city = 'Puyallup'
+     ,@zip = 98672
+     ,@country = 'USA'
+     
+SET @product_name1 = 'Lychee Boba'
+@product_name2 = 'Taro Boba'
+@product_name3 = 'Strawberry Boba'
+@product_name4 = 'Blueberry Boba'
+@product_name5 = 'BrownSugar Boba'
+	
