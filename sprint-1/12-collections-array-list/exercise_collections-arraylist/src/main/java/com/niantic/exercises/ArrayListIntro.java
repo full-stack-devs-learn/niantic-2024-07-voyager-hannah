@@ -10,10 +10,18 @@ public class ArrayListIntro
 
     Return the list.
      */
-    public ArrayList<String> getHeroesList()
-    {
-        return null;
+    public ArrayList<String> getHeroesList(){
+        ArrayList<String> heroes = new ArrayList<>();
+
+        heroes.add("Batman");
+        heroes.add("Superman");
+        heroes.add("Spiderman");
+        heroes.add("Hulk");
+        heroes.add("Iron Man");
+        return heroes;
     }
+
+  
 
     /*
     2. Given a list of integers, create and return a new list of just the
@@ -24,8 +32,16 @@ public class ArrayListIntro
      */
     public ArrayList<Integer> findEvens(ArrayList<Integer> numbers)
     {
-        return null;
-    }
+      ArrayList<Integer> evenNumbers = new ArrayList<>();
+        for(int i = 0; i < numbers.size(); i++) {
+            int number = numbers.get(i);
+            if (number % 2 == 0) {
+                evenNumbers.add(number);
+            }
+
+            }
+        return evenNumbers;
+        }
 
     /*
     3. Given a list of integers, return the sum of all numbers
@@ -35,7 +51,11 @@ public class ArrayListIntro
      */
     public int sum(ArrayList<Integer> numbers)
     {
-        return 0;
+        int sumOfNumbers = 0;
+        for (int i = 0; i < numbers.size(); i++)  {
+            sumOfNumbers += numbers.get(i);
+        }
+        return sumOfNumbers;
     }
 
     /*
@@ -44,9 +64,17 @@ public class ArrayListIntro
        sum( [1, 2, 3, 4] )            ->  4
        sum( [21, 98, 78, 5, 6, 8] )   ->  98
      */
-    public int max(ArrayList<Integer> numbers)
-    {
-        return 0;
+    public int max(ArrayList<Integer> numbers) {
+        int maxNumber = numbers.get(0);
+        for (int i = 1; i < numbers.size(); i++){
+        if (numbers.get(i) > maxNumber)
+                maxNumber = numbers.get(i);
+
+        }
+
+        {
+            return maxNumber;
+        }
     }
 
     /*
@@ -56,8 +84,11 @@ public class ArrayListIntro
        sum( [21, 98, -78, 5, 6, 8] )  ->  -78
      */
     public int min(ArrayList<Integer> numbers)
-    {
-        return 0;
+    { int minNumber = numbers.get(0);
+        for(int i = 1; i < numbers.size(); i++)
+            if (numbers.get(i) < minNumber)
+                minNumber = numbers.get(i);
+        return minNumber;
     }
 
     /*
@@ -68,8 +99,12 @@ public class ArrayListIntro
        sum( [21, 98, -78, 5, 6, 8] )    ->  53
      */
     public int average(ArrayList<Integer> numbers)
-    {
-        return 0;
+    { int sum = 0;
+        for(int number : numbers) {
+            sum += number;
+        }
+       int average =  sum / numbers.size();
+        return average;
     }
 
     /*
