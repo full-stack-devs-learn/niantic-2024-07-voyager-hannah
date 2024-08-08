@@ -4,6 +4,7 @@ import com.niantic.models.Category;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
+import org.springframework.test.context.jdbc.Sql;
 
 import javax.sql.DataSource;
 import java.util.ArrayList;
@@ -63,18 +64,45 @@ public class CategoryDao
 
     Execute the query, then return a Category object from the results
      */
-    public Category getCategoryById(int categoryId)
+    public Category getCategoryById(int userId)
     {
-        return null;
-    }
 
+        String sql = """
+        SELECT category_id
+            ,category_name
+            ,description
+        FROM categories
+        WHERE category_id = ?
+        """;
+
+        SqlRowSet row = jdbcTemplate.queryForRowSet(sql, userId);
+        Category category = new Category();
+        while(row.next()) {
+            int categoryById = row.getInt("category_id");
+            String categoryName = row.getString("category_name");
+            String description = row.getString("description");
+            category.setCategoryId(categoryById);
+            category.setCategoryName(categoryName);
+            category.setDescription(description);
+        }
+        return category;
+
+
+    }
     /*
     Write an INSERT statement
     and insert a new category into the northwind database
     with the values that are provided by the user
      */
     public void addCategory(Category category)
-    {
+    { Category usercategory = new Category();
+        String sql = """ 
+                INSERT INTO categories(category_name,description)
+                VALUES (?,?);
+                """;
+        jdbcTemplate.update(sql, category.getCategoryName(),category.getDescription());
+
+
     }
 
     /*
@@ -83,7 +111,14 @@ public class CategoryDao
     for the specified category
      */
     public void updateCategory(Category category)
-    {
+    { Category updatecategory = new Category();
+        String sql = """ 
+                UPDATE categories
+                SET category_name = ?
+                , description = ?
+                WHERE category_id = ?;
+                """;
+        jdbcTemplate.update(sql, category.getCategoryName(),category.getDescription(),category.getCategoryId());
     }
 
     /*
@@ -91,7 +126,13 @@ public class CategoryDao
     with the specified ID
      */
     public void deleteCategory(int categoryId)
-    {
+
+    {   Category category = new Category();
+        String sql = """
+            DELETE FROM categories
+            WHERE category_id ?;
+            """;
+        jdbcTemplate.update(sql, category.getCategoryId());
     }
 
 
