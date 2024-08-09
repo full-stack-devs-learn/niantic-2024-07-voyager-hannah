@@ -127,12 +127,12 @@ public class CategoryDao
      */
     public void deleteCategory(int categoryId)
 
-    {   Category category = new Category();
+    {
         String sql = """
             DELETE FROM categories
             WHERE category_id ?;
             """;
-        jdbcTemplate.update(sql, category.getCategoryId());
+
     }
 
 
