@@ -74,7 +74,7 @@ public class CategoryDao
         FROM categories
         WHERE category_id = ?
         """;
-
+  // Converts to DTO
         SqlRowSet row = jdbcTemplate.queryForRowSet(sql, userId);
         Category category = new Category();
         while(row.next()) {
