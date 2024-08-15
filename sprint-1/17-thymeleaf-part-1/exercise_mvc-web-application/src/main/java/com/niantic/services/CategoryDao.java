@@ -115,4 +115,7 @@ public class CategoryDao
     }
 
 
+    public ArrayList<Category> getAllCategories() {
+        return null;
+    }
 }
