@@ -68,19 +68,15 @@ public class CategoriesController {
     }
     @PostMapping("/categories/{id}/edit")
     public String editCategory(@ModelAttribute("category") Category category, @PathVariable int id)
-    {
-        category.setCategoryById(id);
+    {   Category category = categoryDao.getCategoryById(id);
+        if (category != null) {
+        model.addAttribute("category", category);
+        model.addAttribute("action", "delete");
+
         categoryDao.updateCategory(category);
         return "categories/edit";
     }
-    @GetMapping("categories/{id}/delete")
-    public String deleteCategory(@PathVariable int id) {
-        Category category = categoryDao.getCategoryById(id);
-    return "categories/delete";
-    }
-    @PostMapping
-    public String deleteProduct(@PathVariable int id){
-        categoryDao.deleteCategory(id);
-        return "categories/delete";
+
+
     }
 }
