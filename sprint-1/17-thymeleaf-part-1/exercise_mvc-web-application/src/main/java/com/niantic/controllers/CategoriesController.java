@@ -67,9 +67,8 @@ public class CategoriesController {
 
     }
     @PostMapping("/categories/{id}/edit")
-    public String editCategory(@ModelAttribute("category") Category category, @PathVariable int id)
+    public String editCategory(@ModelAttribute("category") Model model, @PathVariable int id)
     {   Category category = categoryDao.getCategoryById(id);
-        if (category != null) {
         model.addAttribute("category", category);
         model.addAttribute("action", "delete");
 
@@ -79,4 +78,4 @@ public class CategoriesController {
 
 
     }
-}
+
