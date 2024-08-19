@@ -4,10 +4,11 @@ import com.niantic.models.Category;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
+import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.util.ArrayList;
-
+@Repository
 public class CategoryDao
 {
     private final JdbcTemplate jdbcTemplate;

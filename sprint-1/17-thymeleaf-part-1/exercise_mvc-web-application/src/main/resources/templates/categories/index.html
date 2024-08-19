@@ -20,15 +20,18 @@
     <thead>
     <tr>
         <th>Id</th>
-        <th>Category</th>
+       <th>Category</th>
+        <th>Add</th>
     </tr>
     </thead>
     <tbody>
-    <tr>
 
-        <td>1</td>
-        <td>First Category</td>
-    </tr>
+    <tr class="table-secondary" style="color:black;"th:each="category:${categories}">
+        <td th:text="${category.categoryId}"></td>
+        <td><a th:href="@{|/categories/${category.categoryId}|}"th:text="${category.categoryName}"></a></td>
+
+
+
     </tbody>
 </table>
 </main>

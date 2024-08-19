@@ -2,57 +2,59 @@ package com.niantic.controllers;
 
 import com.niantic.models.Category;
 import com.niantic.services.CategoryDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 @Controller
+
 public class CategoriesController {
-     private CategoryDao categoriesDao = new CategoryDao();
+@Autowired
+    private CategoryDao categoryDao;
 
 
-     @GetMapping("/categories")
-     public String index(Model model) {
-          var categories = categoriesDao.getAllCategories();
-          model.addAttribute("categories", categories);
+    @GetMapping("/categories")
+    public String getCategories(Model model) {
 
-          return "categories/index";
+        {
+            ArrayList<Category> categories;
 
-     }
+            categories = categoryDao.getCategories();
 
-     @GetMapping("/categories/{id}")
-     public String details(Model model, @PathVariable int id) {
-          var categories = categoriesDao.getCategoryById(id);
-          model.addAttribute("categories", categories);
+            model.addAttribute("categories", categories);
 
-          return "categories/details";
+            return "categories/index";
+        }
+    }
+
+    @GetMapping("/categories/{id}")
+    public String getCategoryById(Model model, @PathVariable("id") int id) {
+
+        Category category = categoryDao.getCategoryById(id);
+        model.addAttribute("category", category);
+        return "/categories/details";
+
+    }
 
 
-          @GetMapping("/categories/{id}")
-          public String getAllCategories (Model model, @RequestParam(required = false) String id)
-          {
-               Category category;
-               List<Category> categories;
+    @GetMapping("categories/add")
+    public String addCategory(Model model) {
+        ArrayList<Category> categories;
+        categories = categoryDao.getCategories();
+        model.addAttribute("category", new Category());
+        model.addAttribute("action", "add");
+        return "categories/add";
+    }
+    @PostMapping("categories/add")
+    public String addCategory(Model model, @ModelAttribute("category") Category category) {
+        categoryDao.addCategory(category);
+        model.addAttribute("category", category);
 
-               if (id == null) {
-                    category = categoriesDao.getCategoryById(id);
-               }
-               category = categoriesDao.getAllCategories();
-               if (category == null) {
-                    return "error/404";
-               } else {
-
-               }
-
-               StringBuilder builder = new StringBuilder();
-
-               model.addAttribute("categories", categories);
-               return "categories/details";
-          }
-     }
+        return "categories/add";
+    }
+}
