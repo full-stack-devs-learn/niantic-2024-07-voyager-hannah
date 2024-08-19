@@ -47,4 +47,7 @@ public class Category
         this.description = description;
     }
 
+    public void setCategoryById(int id) {
+
+    }
 }

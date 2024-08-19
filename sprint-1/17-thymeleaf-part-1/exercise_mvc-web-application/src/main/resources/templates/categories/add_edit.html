@@ -11,7 +11,22 @@
 
 </head>
 <body>
+<div class="container">
+    <h4 th:if="${action} == 'add'">Add Category</h4>
+    <form method="post" th:action="@{/categories/add_edit}" th:object="${category}">
+        <div class="form-group">
+            <label for="categoryName" class="form-label mt-4">Category Name</label>
+            <input id="categoryName" th:field="*{categoryName}" type="text" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="description" class="form-label mt-4">Description</label>
+            <input id="description" th:field="*{description}" type="text" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary mt-4">Save</button>
+    </form>
 
-
+</div>
 </body>
+
+
 </html>

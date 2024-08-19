@@ -15,13 +15,14 @@
 <main class="container mt-4">
 <h4>Categories</h4>
 
-    <a th:href="@{/categories/new}">New</a>
+    <a th:href="@{/categories/add_edit}" class="btn btn-success mb-3">Add Transaction</a>
+    <a th:href="@{/categories/add_edit}" class="btn btn-success mb-3">Edit</a>
+    <a th:href="@{/categories/delete}" class="btn btn-success mb-3">Delete</a>
 <table class="table table-striped">
     <thead>
     <tr>
         <th>Id</th>
        <th>Category</th>
-        <th>Add</th>
     </tr>
     </thead>
     <tbody>
