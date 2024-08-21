@@ -7,17 +7,25 @@ public class Quiz
     private final String studentName;
 
     public int getScore()
-    {
+    {    if(score <= 0) {
+        return 1;
+    }
         return score;
     }
 
-    public void setScore(int score)
-    {
-        this.score = score;
+    public void setScore(int score) {
+        if (score <= 0) {
+            this.score = 0;
+        } else {
+            this.score = score;
+        }
     }
 
     public int getPossiblePoints()
     {
+        if(possiblePoints <= 0) {
+            return 1;
+        }
         return possiblePoints;
     }
 
@@ -30,6 +38,7 @@ public class Quiz
     {
         this.possiblePoints = possiblePoints;
         this.studentName = studentName;
+
     }
 
     public int getPercent()

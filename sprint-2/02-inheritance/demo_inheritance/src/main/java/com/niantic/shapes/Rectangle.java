@@ -1,9 +1,9 @@
 package com.niantic.shapes;
 
 public class Rectangle
-{
-    private double height;
-    private double width;
+{ //default values
+    private double height = 10;
+    private double width = 10;
 
     public double getHeight()
     {

@@ -4,34 +4,38 @@ Class: Rectangle
 
     Bug 1:
 
-        Describe the bug/error:
+        Describe the bug/error: on Rectangle. Java  the getPerimeter was returning (width + height) which
+        does not calculate perimeter
 
         Where was the bug? (function, line number)
-
+        public int getPerimeter line 52 in Rectangle.java
         What test helped you find the bug?
-
+         @Test
+            public void returnThe_perimeterOfTheRectangle() {
         What did you do to fix the bug?
-
+        I changed the getPerimeter to return 2 *(width + height);
     Bug 2:
 
-        Describe the bug/error:
+        Describe the bug/error: The width and height were returning negative
 
         Where was the bug? (function, line number)
-
+        9-43
         What test helped you find the bug?
-
+        @Test
+            public void widthAndHeight_shouldNotReturn_negativeNumbers_onlyZero() {
         What did you do to fix the bug?
-
+         added if statement to the
+                getters and setters
     Bug 3:
 
         Describe the bug/error:
-
+        The rectangle class was hard coded with width and height
         Where was the bug? (function, line number)
-
+        line 45-47
         What test helped you find the bug?
-
+        public void widthAndHeight_shouldNotReturn_negativeNumbers_onlyZero() {
         What did you do to fix the bug?
-
+        Commented it out
 
 
 
@@ -40,9 +44,9 @@ Class: Quiz
     Bug 1:
 
         Describe the bug/error:
-
+        I could not test letter grade
         Where was the bug? (function, line number)
-
+        Quiz line 34
         What test helped you find the bug?
 
         What did you do to fix the bug?
