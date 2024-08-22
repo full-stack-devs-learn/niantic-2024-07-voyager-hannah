@@ -10,6 +10,7 @@ public class Character
     protected int experience;
 
 
+
     public boolean isDefeated()
     {
         return health <= 0;
@@ -78,9 +79,8 @@ public class Character
             System.out.println(this.name + " has been defeated!");
             return;
         }
-
-        this.level++;
         this.health += 10;
+        this.level++;;
         System.out.println(this.name + " has leveled up to level " + this.level + "!");
     }
 
