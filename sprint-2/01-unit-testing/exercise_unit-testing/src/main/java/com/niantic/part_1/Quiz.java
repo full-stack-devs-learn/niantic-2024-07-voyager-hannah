@@ -49,7 +49,7 @@ public class Quiz
     public String getLetterGrade()
     {
         int percent = getPercent();
-
+//equal to?
         if(percent > 90) return "A";
         else if(percent > 80) return "B";
         else if(percent > 70) return "C";
