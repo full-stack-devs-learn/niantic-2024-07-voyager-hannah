@@ -14,9 +14,6 @@ public class Wizard extends Character {
     }
 
     public int getMana() {
-        //if (mana > 0) {
-          //  mana -= 10;
-       // }
         return mana;
 
 
@@ -29,12 +26,9 @@ public class Wizard extends Character {
     }
 
 
-
-
     public void castSpell(Character target) {
         int requiredMana = 10;
 
-        //target.takeDamage(attackDamage);
         if (mana >= requiredMana) {
             mana -= 10;
             super.attack(target);
@@ -51,25 +45,24 @@ public class Wizard extends Character {
     @Override
     public void levelUp() {
         int manaIncrease = 10;
-        if (!isDefeated())  regenerateMana(manaIncrease);
+        if (!isDefeated()) regenerateMana(manaIncrease);
 
         super.levelUp();
-
-        System.out.println(" Health before level up: ");
 
 
         System.out.println("Wizard leveled up! Mana increased by 10.");
     }
 
-    //@Override
-    //public void regenerateMana(int amount) {
-      //  mana++;
-
-     //   System.out.println("Regenerating mana.....");
-
-
+    public void specialAbility(Character target) {
+        castSpell(target);
     }
-//}
+    }
+
+
+
+
+
+
 
 
 

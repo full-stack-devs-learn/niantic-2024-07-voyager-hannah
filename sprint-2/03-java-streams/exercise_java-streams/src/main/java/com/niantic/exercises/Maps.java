@@ -4,9 +4,9 @@ import com.niantic.models.LineItem;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
-public class Maps
-{
+public class Maps {
 
     /*
     1) using a chain of Java Stream functions, convert the list of line items to
@@ -16,10 +16,18 @@ public class Maps
        and the list should be sorted alphabetically (A-Z) by company name
 
      */
-    public List<String> mapCompanyNames(List<LineItem> lineItems)
-    {
-        return new ArrayList<>();
+    public List<String> mapCompanyNames(List<LineItem> lineItems) {
+        var companies = lineItems.stream()
+                .map(LineItem::getCompanyName)
+                .distinct()
+                .sorted()
+                .toList();
+
+        return companies;
+
     }
+
+
 
     /*
     2) using a chain of Java Stream functions, convert the list of line items to
@@ -31,7 +39,13 @@ public class Maps
      */
     public List<String> mapCategories(List<LineItem> lineItems)
     {
-        return new ArrayList<>();
+        var categories = lineItems.stream()
+                .map(LineItem::getCategoryName)
+                .distinct()
+                .sorted()
+                .toList();
+
+        return categories;
     }
 
     /*
@@ -44,7 +58,13 @@ public class Maps
      */
     public List<String> mapProducts(List<LineItem> lineItems)
     {
-        return new ArrayList<>();
+        var products = lineItems.stream()
+                .map(LineItem::getProductName)
+                .distinct()
+                .sorted()
+                .toList();
+
+        return products;
     }
 
     /*
@@ -55,9 +75,14 @@ public class Maps
        and the list should be sorted numerically (0-9) by year
 
      */
-    public List<String> mapYears(List<LineItem> lineItems)
-    {
-        return new ArrayList<>();
+    public List<String> mapYears(List<LineItem> lineItems) {
+        var year = lineItems.stream()
+                .map(item -> String.valueOf(item.getOrderDate().getYear()))
+                .distinct()
+                .sorted()
+                .collect(Collectors.toList());
+
+        return year;
     }
 
     /*
@@ -70,6 +95,13 @@ public class Maps
      */
     public List<String> mapOrderIds(List<LineItem> lineItems)
     {
-        return new ArrayList<>();
+        var order = lineItems.stream()
+                .map(item -> String.valueOf(item.getOrderId()))
+                .distinct()
+                .sorted()
+                .collect(Collectors.toList());
+
+        return order;
     }
-}
+    }
+
