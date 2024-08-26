@@ -132,15 +132,15 @@ public class QuizTest {
         int possiblePoints = 100;
         String studentName = "Snorlax";
         String expectedLetterGrade = "F";
-        String actualLetterGrade = "F";
+        //String actualLetterGrade = "B";
         Quiz quiz = new Quiz(100, "Snorlax");
         quiz.setScore(20);
 
         //act
-        String letterGrade = quiz.getLetterGrade();
+      String actualLettergrade = quiz.getLetterGrade();
 
         //assert
-        assertEquals(expectedLetterGrade, actualLetterGrade,"Any value below 60 percent returns F");
+        assertEquals(expectedLetterGrade, actualLettergrade, "Should return F");
 
     }
     @Test
