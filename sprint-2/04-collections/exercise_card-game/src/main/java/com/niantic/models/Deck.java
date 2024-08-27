@@ -27,27 +27,13 @@ public class Deck {
     public Card takeCard() {
         Card card = cards.removeFirst();
         return card;
+
     }
         public void shuffle ()
         {
             Collections.shuffle(cards);
         }
     }
-// int[] numbers = {1, 2, 3, 4, 5, 6};
-// for(int number : numbers) {
 
-//  }
-//   String[] colors = {"Blue", "Red",};
-
-// for(String color : colors)
-// {
-//  for(int number : numbers)
-//  {
-//Card card = new Card(number, color);
-//Card card = new Card(color, number);
-//  cards.add(card);
-
-//  }
-// }
 
 

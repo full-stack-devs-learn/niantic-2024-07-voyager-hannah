@@ -1,6 +1,9 @@
 package com.niantic.ui;
 
-public final class ColorCodes 
+import javax.swing.*;
+import java.awt.*;
+
+public final class ColorCodes
 {
     public static final String RESET = "\u001B[0m";
     public static final String BLACK = "\u001B[30m";
@@ -30,6 +33,8 @@ public final class ColorCodes
     public static final String UNDERLINE_HEAVY = "\u001B[21m";
     public static final String OUTLINE = "\u001B[51m";
 
-    private ColorCodes(){}
+    private ColorCodes(){
+
+    }
     
 }
