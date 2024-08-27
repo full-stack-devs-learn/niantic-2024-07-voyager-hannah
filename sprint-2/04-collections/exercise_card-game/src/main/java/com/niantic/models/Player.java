@@ -6,12 +6,13 @@ import java.util.List;
 public class Player {
     private String name;
     private Hand hand;
-    private final List<Integer> resultsHistory;
+    private List<Integer> results;
+
 
     public Player(String name) {
         this.name = name;
         this.hand = new Hand();
-        this.resultsHistory = new ArrayList<>();
+        this.results = new ArrayList<>();
 
     }
 
@@ -31,7 +32,22 @@ public class Player {
         return hand;
     }
 
-    public List<Integer> getResultsHistory() {
-        return resultsHistory;
+
+    public void addResult(int result) {
+        results.add(result);
     }
+
+    public List<Integer> getResults() {
+        return new ArrayList<>(results);
+    }
+    public void clearHand() {
+        hand.clear();
+    }
+    @Override
+    public String toString() {
+        return name + " has hand value of " + getHandValue();
+    }
+
 }
+
+

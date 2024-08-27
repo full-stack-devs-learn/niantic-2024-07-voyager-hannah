@@ -12,7 +12,6 @@ public class QuizTest {
         //arrange
         int expectedPoints = 100;
         String expectedName = "Hannah";
-        //int score = 95;
         Quiz quiz = new Quiz(expectedPoints, expectedName);
 
         //act
@@ -64,15 +63,14 @@ public class QuizTest {
         int possiblePoints = 100;
         String studentName = "Mewtwo";
         String expectedLetterGrade = "A";
-        String actualLetterGrade = "A";
         Quiz quiz = new Quiz(100, "Mewtwo");
         quiz.setScore(95);
 
         //act
-        String letterGrade = quiz.getLetterGrade();
+        String actual = quiz.getLetterGrade();
 
         //assert
-        assertEquals(expectedLetterGrade, actualLetterGrade, "Should return A at 90 percent");
+        assertEquals(expectedLetterGrade, actual, "Should return A at 90 percent");
 
     }
     @Test
@@ -81,15 +79,14 @@ public class QuizTest {
         int possiblePoints = 100;
         String studentName = "Mew";
         String expectedLetterGrade = "B";
-        String actualLetterGrade = "B";
         Quiz quiz = new Quiz(100, "Mew");
         quiz.setScore(80);
 
         //act
-        String letterGrade = quiz.getLetterGrade();
+        String actual = quiz.getLetterGrade();
 
         //assert
-        assertEquals(expectedLetterGrade, actualLetterGrade, "Should return B at 80 percent");
+        assertEquals(expectedLetterGrade, actual, "Should return B at 80 percent");
 
     }
     @Test
@@ -98,15 +95,14 @@ public class QuizTest {
         int possiblePoints = 100;
         String studentName = "Squirtle";
         String expectedLetterGrade = "C";
-        String actualLetterGrade = "C";
         Quiz quiz = new Quiz(100, "Squirtle");
         quiz.setScore(70);
 
         //act
-        String letterGrade = quiz.getLetterGrade();
+        String actual = quiz.getLetterGrade();
 
         //assert
-        assertEquals(expectedLetterGrade, actualLetterGrade, "Should return C at 90%");
+        assertEquals(expectedLetterGrade, actual, "Should return C at 90%");
 
     }
     @Test
@@ -115,15 +111,14 @@ public class QuizTest {
         int possiblePoints = 100;
         String studentName = "Bulbasaur";
         String expectedLetterGrade = "D";
-        String actualLetterGrade = "D";
         Quiz quiz = new Quiz(100, "Bulbasaur");
         quiz.setScore(60);
 
         //act
-        String letterGrade = quiz.getLetterGrade();
+        String actual = quiz.getLetterGrade();
 
         //assert
-        assertEquals(expectedLetterGrade, actualLetterGrade, "Should return D at 60 percent");
+        assertEquals(expectedLetterGrade, actual, "Should return D at 60 percent");
 
     }
     @Test
@@ -132,15 +127,14 @@ public class QuizTest {
         int possiblePoints = 100;
         String studentName = "Snorlax";
         String expectedLetterGrade = "F";
-        //String actualLetterGrade = "B";
         Quiz quiz = new Quiz(100, "Snorlax");
         quiz.setScore(20);
 
         //act
-      String actualLettergrade = quiz.getLetterGrade();
+      String actual = quiz.getLetterGrade();
 
         //assert
-        assertEquals(expectedLetterGrade, actualLettergrade, "Should return F");
+        assertEquals(expectedLetterGrade, actual, "Should return F");
 
     }
     @Test

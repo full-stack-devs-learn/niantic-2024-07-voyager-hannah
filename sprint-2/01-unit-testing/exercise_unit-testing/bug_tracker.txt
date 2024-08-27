@@ -48,16 +48,17 @@ Class: Quiz
         Where was the bug? (function, line number)
         Quiz line 34
         What test helped you find the bug?
-
+        Letter grade tests
         What did you do to fix the bug?
-
+        >=
     Bug 2:
 
         Describe the bug/error:
-
+        Get percent needed to have a double because in java integer divided by integer = 0
         Where was the bug? (function, line number)
-
+        getPercent Line 44
         What test helped you find the bug?
+        I fixed the LetterGrade in quiz.java and it still wasn't running
 
         What did you do to fix the bug?
 
