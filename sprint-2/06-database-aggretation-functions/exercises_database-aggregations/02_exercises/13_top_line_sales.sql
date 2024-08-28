@@ -2,6 +2,14 @@
 -- include the company name, order id, country and total sale amount
 -- (Use the customer_orders View)
 
+SELECT company_name
+, order_id
+, country
+, sales_price * quantity AS  total_sales
+
+FROM  customer_orders
+ORDER BY total_sales DESC
+LIMIT 5;
 -- expected rows
 -- QUICK-Stop,                  10865,  Germany,    15810.00
 -- Hanari Carnes,               10981,  Brazil,     15810.00

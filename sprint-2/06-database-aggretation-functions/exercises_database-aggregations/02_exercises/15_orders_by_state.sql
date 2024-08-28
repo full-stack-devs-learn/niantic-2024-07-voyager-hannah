@@ -1,6 +1,12 @@
 -- 15. number of orders placed in each state in the US
 -- sort by highest order count to lowest
 -- (Use the customer_orders View)
+SELECT 
+DISTINCT DISTINCT COUNT(DISTINCT order_id) AS order_count
+,region
+FROM customer_orders
+WHERE region IN ('ID', 'OR', 'WA', 'NM', 'AK', 'WY', 'CA', 'MT' )
+GROUP BY region
 
 -- hint: only count each order_id once
 

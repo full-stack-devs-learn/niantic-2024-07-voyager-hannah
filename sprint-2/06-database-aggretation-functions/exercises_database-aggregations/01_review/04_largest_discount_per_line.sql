@@ -8,8 +8,15 @@
 
 -- Display all rows where the total discount is  over $1000.
 -- (Use the customer_orders View)
-
-
+SELECT product_name,
+       sales_price,
+      quantity,
+       sales_price * quantity AS sub_total,
+	sales_price * quantity * discount AS total_discount,
+	sales_price * quantity - discount AS  line_total
+FROM customer_orders
+WHERE sales_price * quantity * discount > 1000
+ORDER BY sales_price * quantity * discount DESC
 -- Order the results by total_discount, highest first.
 -- (8 rows)
 

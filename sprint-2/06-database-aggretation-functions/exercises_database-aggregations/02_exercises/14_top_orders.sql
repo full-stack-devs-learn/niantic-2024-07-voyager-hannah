@@ -3,7 +3,16 @@
 -- include the order_id and order_total
     -- you will need to perform some grouping
 -- (Use the customer_orders View)
+SELECT SUM(sales_price * quantity - discount) AS  order_total
+,order_id
+,company_name
 
+    
+FROM customer_orders
+
+GROUP BY order_id
+,company_name
+ORDER BY order_total DESC;
 -- expected rows
 -- QUICK-Stop,          10865,  Germany,    17250.00
 -- Save-a-lot Markets,  11030,  USA,        16321.90
