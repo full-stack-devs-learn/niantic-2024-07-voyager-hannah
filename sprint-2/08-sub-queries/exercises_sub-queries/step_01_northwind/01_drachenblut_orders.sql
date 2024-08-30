@@ -15,5 +15,21 @@
 
 
 USE northwind;
+SELECT customer_id
+    ,order_id
+	,order_date
+    ,shipped_date
+    , (
+    SELECT c.company_name
+    FROM customers AS c
+    WHERE c.customer_id = o.customer_id) 
+    AS customers
+    FROM orders as o 
+    WHERE (
+		SELECT c.company_name
+		FROM customers AS c
+		WHERE c.customer_id = o.customer_id
+        ) = 'Drachenblut Delikatessen'
+
 
 

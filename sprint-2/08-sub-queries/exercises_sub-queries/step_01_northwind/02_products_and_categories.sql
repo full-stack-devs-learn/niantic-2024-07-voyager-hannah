@@ -13,5 +13,16 @@
 -- sort by category name, then product name
 
 USE Northwind;
+SELECT product_name
+,unit_price
+,(
+SELECT  category_name
+FROM categories as c
+WHERE p.category_id = c.category_id ) AS category_name
+FROM products as p
+ 
+
+
+
 
 
