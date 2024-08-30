@@ -15,15 +15,15 @@
 
 
 USE northwind;
-SELECT customer_id
-    ,order_id
+SELECT 
+     order_id
 	,order_date
     ,shipped_date
     , (
     SELECT c.company_name
     FROM customers AS c
     WHERE c.customer_id = o.customer_id) 
-    AS customers
+    AS company_name
     FROM orders as o 
     WHERE (
 		SELECT c.company_name
@@ -32,4 +32,4 @@ SELECT customer_id
         ) = 'Drachenblut Delikatessen'
 
 
-
+ORDER BY shipped_date DESC
