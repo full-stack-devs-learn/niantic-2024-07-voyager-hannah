@@ -21,8 +21,7 @@ First, open `js/shopping-wervice.js`:
                 title: 'Frozen Pizza',
                 quantity: 4,
                 isComplete: true
-            },
-            
+            }
         ];
 ```
 
