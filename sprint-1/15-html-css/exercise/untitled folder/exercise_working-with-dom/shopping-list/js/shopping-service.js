@@ -1,8 +1,12 @@
 class ShoppingService {
 
+
     getListName() {
-   
-    getShoppingList() 
+    return "Grocery List";
+    
+    }
+
+    getShoppingList() {
         return [
             {
                 id: 1,
@@ -63,7 +67,7 @@ class ShoppingService {
                 title: 'Lemon',
                 quantity: 1,
                 isComplete: true
-            },
+            }
         ];
     }
-}
+  }
