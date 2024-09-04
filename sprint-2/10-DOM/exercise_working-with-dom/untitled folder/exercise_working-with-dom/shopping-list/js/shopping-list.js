@@ -1,14 +1,14 @@
 // add pageTitle
 
 // add groceries
-
+const shoppingService = new ShoppingService();
 /**
  * This function will get a reference to the title and set its text to the value
  * of the pageTitle variable that was set above.
  */
 function displayListTitle() {
 //get title
-const listName =ShoppingService.getListName();
+const listName =shoppingService.getListName();
 //html reference
 const titleElement = document.getElementById('title')
 //set
@@ -19,9 +19,9 @@ titleElement.textContent = listName;
 /**
  * This function will loop over the array of groceries that was set above and add them to the DOM.
  */
-function displayGroceries() {
+function displayShoppingList() {
 //get grocery list
-    const groceries = ShoppingService.getShoppingList();
+    const groceries = shoppingService.getShoppingList();
 //reference html
     const listElement = document.getElementById('shopping-list')
 //loop through groceries
@@ -31,7 +31,7 @@ groceries.forEach(item => {
     listItem.classList.add('list-item')
     listItem.setAttribute('data-id', item.id)
     
-    listItem.innerHTML = ``;
+    listItem.textContent = item.title;
 
 
     if (item.isComplete) {
@@ -49,12 +49,13 @@ function markCompleted() {
     
     const items = document.querySelectorAll('.list-item')
     items.forEach(item => {
-        item.classList.toggle('completed');
+        item.classList.add('completed');
     })
 }
 
 displayListTitle();
 
-displayGroceries();
+displayShoppingList();
+
 
 window.markCompleted = markCompleted;
