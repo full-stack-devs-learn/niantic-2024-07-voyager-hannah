@@ -11,6 +11,6 @@ public class HomeController
     @GetMapping("/")
     public String categories()
     {
-        return "redirect:/products";
+        return "index";
     }
 }
