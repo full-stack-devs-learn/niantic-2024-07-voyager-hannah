@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class ProductsController
@@ -28,6 +29,13 @@ public class ProductsController
         model.addAttribute("currentCategory", category);
         model.addAttribute("products", products);
         return "products/index";
+    }
+    //products by category
+    @GetMapping("/products/category/{categoryId}")
+    public String getProductsByCategory(Model model, @PathVariable("categoryId") int categoryId) {
+        ArrayList<Product> products = productDao.getProductsByCategory(categoryId);
+        model.addAttribute("products", products);
+        return "fragments/product";
     }
 
     // details page
@@ -122,4 +130,5 @@ public class ProductsController
 
         return "redirect:/products?catId=" + product.getCategoryId();
     }
+
 }
