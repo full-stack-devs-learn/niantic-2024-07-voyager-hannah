@@ -8,20 +8,30 @@
 
     <link rel="stylesheet" href="css/styles.css">
     <title>Title</title>
-    <h4 th:if="${action} == 'edit'">Edit Category</h4>
-    <form method="post" th:action="@{/categories/add_edit}" th:object="${category}">
-            <div class="form-group">
-                <label for="categoryName" class="form-label mt-4">Category Name</label>
-                <input id="categoryName" th:field="*{categoryName}" type="text" class="form-control" />
-            </div>
+
+
+    </head>
+<body>
+        <div class="container">
+            <h4 th:if="${action} == 'edit'">Edit Category</h4>
+            <form method="post" th:action="@{/categories/add_edit}" th:object="${category}">
+
+                <label th:for="*{categoryName}" class="form-label mt-4">Category Name</label>
+                <input th:field="*{categoryName}" type="text" class="form-control">
+                <div class="form-group">
+                    <label th:for="*{categoryId}" class="form-label mt-4">Category Id</label>
+                    <input th:field="*{categoryId}" type="text" class="form-control">
+                </div>
+
         <div class="form-group">
             <label for="description" class="form-label mt-4">Description</label>
             <input id="description" th:field="*{description}" type="text" class="form-control" />
         </div>
+
         <button type="submit" class="btn btn-primary mt-4">Save</button>
     </form>
-</head>
-<body>
+        </div>
+
 
 </body>
 </html>
