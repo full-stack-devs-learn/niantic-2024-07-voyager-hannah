@@ -14,7 +14,7 @@ import java.util.ArrayList;
 @Controller
 
 public class CategoriesController {
-@Autowired
+    @Autowired
     private CategoryDao categoryDao;
 
 
@@ -45,12 +45,13 @@ public class CategoriesController {
     @GetMapping("categories/add_edit")
     public String addCategory(Model model) {
         model.addAttribute("category", new Category());
-        model.addAttribute("description",categoryDao.getCategories());
+        model.addAttribute("description", categoryDao.getCategories());
         model.addAttribute("action", "add");
 
 
         return "categories/add_edit";
     }
+
     @PostMapping("categories/add_edit")
     public String addCategory(Model model, @ModelAttribute("category") Category category) {
         categoryDao.addCategory(category);
@@ -58,24 +59,45 @@ public class CategoriesController {
 
         return "categories/add_edit";
     }
+
     @GetMapping("/categories/{id}/edit")
-            public String editCategory(Model model) {
+    public String editCategory(Model model) {
         model.addAttribute("category", new Category());
         model.addAttribute("description", categoryDao.getCategories());
         model.addAttribute("action", "edit");
         return "categories/edit";
 
     }
+
     @PostMapping("/categories/{id}/edit")
-    public String editCategory(@ModelAttribute("category") Model model, @PathVariable int id)
-    {   Category category = categoryDao.getCategoryById(id);
+    public String editCategory(@ModelAttribute("category") Model model, @PathVariable int id) {
+        Category category = categoryDao.getCategoryById(id);
         model.addAttribute("category", category);
-        model.addAttribute("action", "delete");
+        model.addAttribute("action", "edit");
 
         categoryDao.updateCategory(category);
         return "categories/edit";
     }
 
+    @GetMapping("/categories/{id}/delete")
+    public String deleteCategory(Model model) {
+        model.addAttribute("category", new Category());
+        model.addAttribute("description", categoryDao.getCategories());
+        model.addAttribute("action", "delete");
+
+        return "categories/delete";
+    }
+
+    @PostMapping("/categories/{id}/delete")
+    public String deleteCategory(@ModelAttribute("category") Model model, @PathVariable int id) {
+        Category category = categoryDao.getCategoryById(id);
+        model.addAttribute("category", category);
+        model.addAttribute("action", "delete");
+
+        categoryDao.updateCategory(category);
+        return "categories/delete";
+
 
     }
+}
 

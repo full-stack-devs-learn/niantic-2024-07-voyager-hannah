@@ -16,23 +16,25 @@
 <h4>Categories</h4>
 
     <a th:href="@{/categories/add_edit}" class="btn btn-success mb-3">Add Transaction</a>
-    <a th:href="@{/categories/add_edit}" class="btn btn-success mb-3">Edit</a>
-    <a th:href="@{/categories/delete}" class="btn btn-success mb-3">Delete</a>
+
 <table class="table table-striped">
     <thead>
     <tr>
         <th>Id</th>
        <th>Category</th>
     </tr>
-    </thead>
     <tbody>
-
-    <tr class="table-secondary" style="color:black;"th:each="category:${categories}">
+    <tr th:each="category : ${categories}">
         <td th:text="${category.categoryId}"></td>
-        <td><a th:href="@{|/categories/${category.categoryId}|}"th:text="${category.categoryName}"></a></td>
+        <td><a th:href="@{|/categories/${category.categoryId}|}" th:text="${category.categoryName}"></a></td>
+        <td>
+
+            <a th:href="@{/categories/{id}/edit(id=${category.categoryId})}" class="btn btn-light btn-sm">Edit</a>
 
 
+            <a th:href="@{/categories/{id}/delete(id=${category.categoryId})}" class="btn btn-danger btn-sm">Delete</a>
 
+        </td>
     </tbody>
 </table>
 </main>
