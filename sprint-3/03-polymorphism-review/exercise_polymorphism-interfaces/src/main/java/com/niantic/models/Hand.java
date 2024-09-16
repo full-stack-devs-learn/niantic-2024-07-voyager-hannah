@@ -1,6 +1,7 @@
 package com.niantic.models;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Hand
 {
@@ -36,5 +37,6 @@ public class Hand
     public void dealTo(Card card)
     {
         cards.add(card);
+        Collections.sort(cards);
     }
 }
