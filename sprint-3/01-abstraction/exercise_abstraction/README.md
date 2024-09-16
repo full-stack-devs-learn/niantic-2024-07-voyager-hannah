@@ -32,9 +32,9 @@ As you work on creating the classes, be sure to run the tests, and then provide 
 
 Focusing on getting a single test to pass at a time saves time, as this forces you to only focus on what's important for the test you're currently working on. This is commonly called **[Test Driven Development][introduction-to-test-driven-development]**, or **TDD**.
 
-### Be mindful of your access modifiers
+### Be mindful
+Remember that **access modifiers** are a key feature of encapsulation and inheritance. of your access modifiers
 
-Remember that **access modifiers** are a key feature of encapsulation and inheritance.
 
 `Private` members are only visible within the class. They are hidden even from child classes. If you want to make a variable available
 to a child class use the `protected` modifier instead.
