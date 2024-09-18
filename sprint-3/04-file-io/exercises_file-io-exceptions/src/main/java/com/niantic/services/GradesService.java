@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface GradesService
 {
-    String[] getFileNames();
+    String getFileNames();
 
     List<Assignment> getAssignments(String fileName);
 

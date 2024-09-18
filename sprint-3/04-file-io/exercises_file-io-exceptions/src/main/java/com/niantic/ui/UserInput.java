@@ -26,8 +26,8 @@ public class UserInput
 
         System.out.println();
         System.out.print("Please make a selection: ");
-
         return Integer.parseInt(in.nextLine());
+
     }
 
     public static void displayMessage(String message)

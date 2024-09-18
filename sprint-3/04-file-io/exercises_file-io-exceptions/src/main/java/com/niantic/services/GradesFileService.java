@@ -9,7 +9,7 @@ public class GradesFileService implements GradesService
 {
 
     @Override
-    public String[] getFileNames()
+    public String getFileNames()
     {
         return null;
     }
