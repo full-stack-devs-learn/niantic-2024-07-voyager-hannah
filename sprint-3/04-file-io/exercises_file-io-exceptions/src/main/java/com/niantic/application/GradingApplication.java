@@ -103,8 +103,8 @@ public class GradingApplication implements Runnable {
         // todo: 3 - allow the user to select a file name
         // load all student assignment scores from the file - display student statistics (low score, high score, average score)
         Scanner in = new Scanner(System.in);
-
         File directory = new File("files");
+        
         if (!directory.exists() || !directory.isDirectory()) {
             System.out.println("Directory doesn't exist");
             return;
